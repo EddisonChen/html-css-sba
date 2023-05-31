@@ -7,10 +7,12 @@ const result = document.getElementById("result-message");
 const male = document.getElementById("male");
 const female = document.getElementById("female")
 
+let unitType = null;
+
 imperial.addEventListener('click', () => {
     heightInput.innerHTML = (
         `Height: 
-            <select name="height">
+            <select id="height">
                 <option value="55">4ft 7in</option>
                 <option value="56">4ft 8in</option>
                 <option value="57">4ft 9in</option>
@@ -44,20 +46,36 @@ imperial.addEventListener('click', () => {
             </select>`
     )
     weightInput.innerHTML = (
-        `Weight: <input type="number" placeholder="Weight in LBs" name="weight" pattern="[1-9]|[1-9][0-9]|[1-9][0-9][0-9]"></label>`
+        `Weight: <input type="number" placeholder="Weight in LBs" id="weight" pattern="[1-9]|[1-9][0-9]|[1-9][0-9][0-9]">`
     )
+    unitType = "imperial";
 })
 
 metric.addEventListener('click', () => {
     heightInput.innerHTML = (
-        `Height: <input type="number" name="height" placeholder="Height In CM">`
+        `Height: <input type="number" id="height" placeholder="Height In CM">`
     )
     weightInput.innerHTML = (
-        `Weight: <input type="number" placeholder="Weight in KGs" name="weight" pattern="[1-9]|[1-9][0-9]|[1-9][0-9][0-9]"></label>`
+        `Weight: <input type="number" placeholder="Weight in KGs" id="weight" pattern="[1-9]|[1-9][0-9]|[1-9][0-9][0-9]">`
     )
+    unitType = "metric";
 })
 
+let height = null;
+let weight = null;
 let sex = null;
+
+const setHeight = () => {
+    const heightValue = document.getElementById("height");
+    height = heightValue.value;
+    console.log(height)
+}
+
+const setWeight = () => {
+    const weightValue = document.getElementById("weight");
+    weight = weightValue.value;
+    console.log(weight)
+}
 
 male.addEventListener('click', () => {
     sex = "male";
@@ -68,16 +86,15 @@ female.addEventListener('click', () => {
 })
 
 submitButton.addEventListener('click', () => {
-    console.log(sex)
-    if (!heightInput.value || !weightInput.value || sex == null) {
+    setHeight()
+    setWeight()
+    if (height && weight &&sex) {
         result.innerHTML = (
-            `
-            <p>Hey fill everything out</p>
-            `
+            `<p>good job</p>`
         )
     } else {
         result.innerHTML = (
-            `<p>good job</p>`
+            `<p>bad dog</p>`
         )
     }
 })
