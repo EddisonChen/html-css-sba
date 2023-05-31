@@ -9,7 +9,42 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <h1>hello</h1>
+        <h1>Ultimate TDEE Calculator</h1>
+
+        <form onsubmit="return false">
+            <fieldset>
+                <h4>Unit Type</h4>
+                <label id="imperial">Imperial<input type="radio" value="imperial" name="unitType"></label>
+                <label id="metric">Metric<input type="radio" value="metric" name="unitType"></label>
+            </fieldset>
+
+            <label id="height-input"></label>
+
+            <label id="weight-input"></label>
+
+            <fieldset id="sex">
+                <h4>Sex</h4>
+                <label>Male<input type="radio" value="male" name="sex" id="male"></label>
+                <label>Female<input type="radio" value="female" name="sex" id="female"></label>
+            </fieldset>
+
+            <label>Activity Level:
+                <select>
+                    <option value="sedentary" name="activityLevel">Sedentary</option>
+                    <option value="lightExercise" name="activityLevel">Light Exercise</option>
+                    <option value="moderateExercise" name="activityLevel">Moderate Exercise</option>
+                    <option value="heavyExercise" name="activityLevel">Heavy Exercise</option>
+                    <option value="athlete" name="activityLevel">Athlete</option>
+                </select>
+            </label>
+
+            <label> Body Fat Percentage: 
+                <input type="number" name="bodyFatPercentage" pattern="/^([0-9]|[1-9][0-9]|100)$/">
+            </label>
+
+            <input id="submit-button" type="submit">
+        </form>
+        <div id="result-message"></div>
         
         <script src="function.js" async defer></script>
     </body>
