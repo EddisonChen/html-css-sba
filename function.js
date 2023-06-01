@@ -196,59 +196,74 @@ const bmiCalculation = () => {
     }
 }
 
+let mmp = null;
+
+const mmpCalculation = () => {
+    const convertedHeight = parseInt(height)*2.54
+    if (unitType == "imperial") {
+        mmp = ((convertedHeight - 100)*2.205)
+    } else {
+        mmp = (height - 100)
+    }
+}
+
 // const resultMessage = (
 //     <div>
-//         <p>You are a ${age} year old ${sex} that is ${height} ${heightUnit} tall and weighs ${weight} ${weightUnit}.</p>
-//         <h2>Your maintenance calories: ${calorieActivityRange[activityLevel]} per day</h2>
-//         <table>
-//             <tr>
-//                 <td>Basal Metabolic Rate</td>
-//                 <td>${calorieActivityRange["bmr"]}</td>
-//             </tr>
-//             <tr>
-//                 <td>Sedentary</td>
-//                 <td>${calorieActivityRange["sedentary"]}</td>
-//             </tr>
-//             <tr>
-//                 <td>Light Exercise</td>
-//                 <td>${calorieActivityRange["lightExercise"]}</td>
-//             </tr>
-//             <tr>
-//                 <td>Moderate Exercise</td>
-//                 <td>${calorieActivityRange["moderateExercise"]}</td>
-//             </tr>
-//             <tr>
-//                 <td>Heavy Exercise</td>
-//                 <td>${calorieActivityRange["bmr"]}</td>
-//             </tr>
-//             <tr>
-//                 <td>Athlete</td>
-//                 <td>${calorieActivityRange["athlete"]}</td>
-//             </tr>
-//         </table>
-//         <div>
-//             <h3>BMI Score: ${bmi}</h3>
-//             <p>You are classified as ${bmiClass}</p>
+//             <p>You are a ${age} year old ${sex} that is ${height} ${heightUnit} tall and weighs ${weight} ${weightUnit}.</p>
+//             <h2>Your maintenance calories: ${calorieActivityRange[activityLevel]} per day</h2>
 //             <table>
 //                 <tr>
-//                     <td>18.5 or Under</td>
-//                     <td>Underweight</td>
+//                     <td>Basal Metabolic Rate</td>
+//                     <td>${calorieActivityRange["bmr"]} calories per day</td>
 //                 </tr>
 //                 <tr>
-//                     <td>18.5 - 24.99</td>
-//                     <td>Normal Weight</td>
+//                     <td>Sedentary</td>
+//                     <td>${calorieActivityRange["sedentary"]} calories per day</td>
 //                 </tr>
 //                 <tr>
-//                     <td>25 - 29.99</td>
-//                     <td>Overweight</td>
+//                     <td>Light Exercise</td>
+//                     <td>${calorieActivityRange["lightExercise"]} calories per day</td>
 //                 </tr>
 //                 <tr>
-//                     <td>30 or Over</td>
-//                     <td>Obese</td>
+//                     <td>Moderate Exercise</td>
+//                     <td>${calorieActivityRange["moderateExercise"]} calories per day</td>
+//                 </tr>
+//                 <tr>
+//                     <td>Heavy Exercise</td>
+//                     <td>${calorieActivityRange["heavyExercise"]} calories per day</td>
+//                 </tr>
+//                 <tr>
+//                     <td>Athlete</td>
+//                     <td>${calorieActivityRange["athlete"]} calories per day</td>
 //                 </tr>
 //             </table>
+//             <div>
+//                 <h3>BMI Score: ${bmi}</h3>
+//                 <p>You are classified as ${bmiClass}</p>
+//                 <table>
+//                     <tr>
+//                         <td>18.5 or Under</td>
+//                         <td>Underweight</td>
+//                     </tr>
+//                     <tr>
+//                         <td>18.5 - 24.99</td>
+//                         <td>Normal Weight</td>
+//                     </tr>
+//                     <tr>
+//                         <td>25 - 29.99</td>
+//                         <td>Overweight</td>
+//                     </tr>
+//                     <tr>
+//                         <td>30 or Over</td>
+//                         <td>Obese</td>
+//                     </tr>
+//                 </table>
+//             </div>
+//             <div>
+//                 <h3>Maximum Muscular Potential</h3>
+//                 <p>According to Martin Barkhan's formula, your maximum muscular potential is ${mmp} ${weightUnit} at 5-6% body fat, ${mmp*1.05} ${weightUnit} at 10% body fat, or ${mmp*1.1} ${weightUnit} a5 15% body fat.</p>
+//             </div>
 //         </div>
-//     </div>
 // )
 
 submitButton.addEventListener('click', () => {
@@ -256,6 +271,7 @@ submitButton.addEventListener('click', () => {
     setWeight()
     calorieCalculation()
     bmiCalculation()
+    mmpCalculation()
     if (height && weight && sex) {
         result.innerHTML = (
             `<div>
@@ -308,6 +324,10 @@ submitButton.addEventListener('click', () => {
                         <td>Obese</td>
                     </tr>
                 </table>
+            </div>
+            <div>
+                <h3>Maximum Muscular Potential</h3>
+                <p>According to Martin Barkhan's formula, your maximum muscular potential is ${mmp.toFixed()} ${weightUnit} at 5-6% body fat, ${(mmp*1.05).toFixed()} ${weightUnit} at 10% body fat, or ${(mmp*1.1).toFixed()} ${weightUnit} a5 15% body fat.</p>
             </div>
         </div>`
         );
