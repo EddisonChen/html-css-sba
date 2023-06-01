@@ -27,9 +27,11 @@
                 <label>Male<input type="radio" value="male" name="sex" id="male"></label>
                 <label>Female<input type="radio" value="female" name="sex" id="female"></label>
             </fieldset>
+          
+            <label>Age: <input type="number" name="age" id="age"></label>
 
             <label>Activity Level:
-                <select>
+                <select id="activity-level">
                     <option value="sedentary" name="activityLevel">Sedentary</option>
                     <option value="lightExercise" name="activityLevel">Light Exercise</option>
                     <option value="moderateExercise" name="activityLevel">Moderate Exercise</option>
@@ -39,12 +41,14 @@
             </label>
 
             <label> Body Fat Percentage: 
-                <input type="number" name="bodyFatPercentage" pattern="/^([0-9]|[1-9][0-9]|100)$/">
+                <input type="number" name="bodyFatPercentage" pattern="/^([0-9]|[1-9][0-9]|100)$/" id="body-fat-percentage">
             </label>
 
             <input id="submit-button" type="submit">
         </form>
-        <div id="result-message"></div>
+        <div id="result-message">
+            
+        </div>
         
         <script src="function.js" async defer></script>
     </body>
