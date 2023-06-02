@@ -3,6 +3,11 @@
 * {
     font-family: "Geologica";
 }
+
+h1 {
+    text-align: center;
+}
+
 nav {
     display: flex;
     flex-direction: row;
@@ -18,5 +23,12 @@ nav {
 #anime-gif {
     max-width: 90%;
     height: auto;
+    margin-top: 15px;
+}
+
+.select-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     margin-top: 15px;
 }

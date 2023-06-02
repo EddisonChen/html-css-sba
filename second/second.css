@@ -4,6 +4,10 @@
     font-family: "Geologica";
 }
 
+h1 {
+    text-align: center;
+}
+
 .button-duo {
     display: flex;
     flex-direction: row;
