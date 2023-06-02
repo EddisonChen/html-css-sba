@@ -327,7 +327,7 @@ submitButton.addEventListener('click', () => {
             </div>
             <div>
                 <h3>Maximum Muscular Potential</h3>
-                <p>According to Martin Barkhan's formula, your maximum muscular potential is ${mmp.toFixed()} ${weightUnit} at 5-6% body fat, ${(mmp*1.05).toFixed()} ${weightUnit} at 10% body fat, or ${(mmp*1.1).toFixed()} ${weightUnit} a5 15% body fat.</p>
+                <p>According to Martin Barkhan's formula, your maximum muscular potential is ${mmp.toFixed()} ${weightUnit} at 5-6% body fat, ${(mmp*1.05).toFixed()} ${weightUnit} at 10% body fat, or ${(mmp*1.1).toFixed()} ${weightUnit} at 15% body fat.</p>
             </div>
         </div>`
         );
