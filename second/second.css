@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Geologica&display=swap');
+
+* {
+    font-family: "Geologica";
+}
+
+.button-duo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 5px;
+}
+
+.image {
+    max-width: 90%;
+    height: auto;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

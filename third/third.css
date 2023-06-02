@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Geologica&display=swap');
+
+* {
+    font-family: "Geologica";
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.gif-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#anime-gif {
+    max-width: 90%;
+    height: auto;
+    margin-top: 15px;
+}

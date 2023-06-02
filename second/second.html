@@ -9,16 +9,23 @@
         <link rel="stylesheet" href="second.css">
     </head>
     <body>
-        <h1>What kind of pictures do you want to see?</h1>
+        <h1>Are You a Dog or Cat Person?</h1>
 
-        <button id="dog-button">Dogs</button>
-        <button id="cat-button">Cat</button>
+        <nav class="button-duo">
+            <a href="../first/index.html"><button>To Calculate Your TDEE</button></a>
+            <a href="../third/third.html"><button>For Cute Gifs</button></a>
+        </nav>
 
-        <img id="dog-image">
-
-        <img id="cat-image">
-
-        <a href="../third/third.html"><button>Final Adventure?</button></a>
+        <div class="button-duo">
+            <button id="dog-button">Dogs</button>
+            <button id="cat-button">Cat</button>
+        </div>
+        
+        <div class="image-container">
+            <img class="image" id="dog-image">
+            <img class="image" id="cat-image">
+        </div>
+        
         <script src="second.js" async defer></script>
     </body>
 </html>

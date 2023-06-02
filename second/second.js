@@ -5,7 +5,7 @@ const catImage = document.getElementById("cat-image")
 
 let dogData = null
 async function getDogImage() {
-    const response = await fetch("https://dog.ceo/api/breeds/image/cat");
+    const response = await fetch("https://dog.ceo/api/breeds/image/random");
     dogData = await response.json();
     console.log(dogData)
     dogImage.setAttribute("src", dogData["message"])

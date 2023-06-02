@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Geologica&display=swap');
+
+* {
+    font-family: "Geologica";
+    margin: none;
+    padding: none;
+}
+
+h1 {
+    text-align: center;
+}
+
+.input-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+fieldset {
+    border: none;
+}
+
+.input-field {
+    margin: 5px;
+}
+
+h4 {
+    padding:none;
+}
+
+.result-info {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+

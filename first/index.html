@@ -11,47 +11,42 @@
     <body>
         <h1>Ultimate TDEE Calculator</h1>
 
-        <form onsubmit="return false">
+        <nav>
+            <a href="../second/second.html"><button>For Cute Pictures</button></a>
+            <a href="../third/third.html"><button>For Cute Gifs</button></a>
+        </nav>
+
+        <form onsubmit="return false" class="input-area">
             <fieldset>
-                <h4>Unit Type</h4>
                 <label id="imperial">Imperial<input type="radio" value="imperial" name="unitType"></label>
                 <label id="metric">Metric<input type="radio" value="metric" name="unitType"></label>
             </fieldset>
 
-            <label id="height-input"></label>
-
-            <label id="weight-input"></label>
-
             <fieldset id="sex">
-                <h4>Sex</h4>
                 <label>Male<input type="radio" value="male" name="sex" id="male"></label>
                 <label>Female<input type="radio" value="female" name="sex" id="female"></label>
             </fieldset>
-          
-            <label>Age: <input type="number" name="age" id="age"></label>
+    
+            <label class="input-field" id="height-input"></label>
+    
+            <label class="input-field" id="weight-input"></label>
+    
+            <input class="input-field" placeholder="Age" type="number" name="age" id="age">
+    
+            <select id="activity-level" class="input-field">
+                <option value="sedentary" name="activityLevel">Sedentary</option>
+                <option value="lightExercise" name="activityLevel">Light Exercise</option>
+                <option value="moderateExercise" name="activityLevel">Moderate Exercise</option>
+                <option value="heavyExercise" name="activityLevel">Heavy Exercise</option>
+                <option value="athlete" name="activityLevel">Athlete</option>
+            </select>
+             
+            <input class="input-field" type="number" placeholder="Body Fat % (Optional)" name="bodyFatPercentage" pattern="/^([0-9]|[1-9][0-9]|100)$/" id="body-fat-percentage">
 
-            <label>Activity Level:
-                <select id="activity-level">
-                    <option value="sedentary" name="activityLevel">Sedentary</option>
-                    <option value="lightExercise" name="activityLevel">Light Exercise</option>
-                    <option value="moderateExercise" name="activityLevel">Moderate Exercise</option>
-                    <option value="heavyExercise" name="activityLevel">Heavy Exercise</option>
-                    <option value="athlete" name="activityLevel">Athlete</option>
-                </select>
-            </label>
-
-            <label> Body Fat Percentage: 
-                <input type="number" name="bodyFatPercentage" pattern="/^([0-9]|[1-9][0-9]|100)$/" id="body-fat-percentage">
-            </label>
-
-            <input id="submit-button" type="submit">
+            <input class="input-field" id="submit-button" type="submit">
         </form>
-        <div id="result-message">
-            
-        </div>
 
-        <a href="../second/second.html"><button>Next Adventure?</button></a>
-        
+        <div id="result-message"></div>
         <script src="function.js" async defer></script>
     </body>
 </html>

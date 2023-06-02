@@ -207,65 +207,6 @@ const mmpCalculation = () => {
     }
 }
 
-// const resultMessage = (
-//     <div>
-//             <p>You are a ${age} year old ${sex} that is ${height} ${heightUnit} tall and weighs ${weight} ${weightUnit}.</p>
-//             <h2>Your maintenance calories: ${calorieActivityRange[activityLevel]} per day</h2>
-//             <table>
-//                 <tr>
-//                     <td>Basal Metabolic Rate</td>
-//                     <td>${calorieActivityRange["bmr"]} calories per day</td>
-//                 </tr>
-//                 <tr>
-//                     <td>Sedentary</td>
-//                     <td>${calorieActivityRange["sedentary"]} calories per day</td>
-//                 </tr>
-//                 <tr>
-//                     <td>Light Exercise</td>
-//                     <td>${calorieActivityRange["lightExercise"]} calories per day</td>
-//                 </tr>
-//                 <tr>
-//                     <td>Moderate Exercise</td>
-//                     <td>${calorieActivityRange["moderateExercise"]} calories per day</td>
-//                 </tr>
-//                 <tr>
-//                     <td>Heavy Exercise</td>
-//                     <td>${calorieActivityRange["heavyExercise"]} calories per day</td>
-//                 </tr>
-//                 <tr>
-//                     <td>Athlete</td>
-//                     <td>${calorieActivityRange["athlete"]} calories per day</td>
-//                 </tr>
-//             </table>
-//             <div>
-//                 <h3>BMI Score: ${bmi}</h3>
-//                 <p>You are classified as ${bmiClass}</p>
-//                 <table>
-//                     <tr>
-//                         <td>18.5 or Under</td>
-//                         <td>Underweight</td>
-//                     </tr>
-//                     <tr>
-//                         <td>18.5 - 24.99</td>
-//                         <td>Normal Weight</td>
-//                     </tr>
-//                     <tr>
-//                         <td>25 - 29.99</td>
-//                         <td>Overweight</td>
-//                     </tr>
-//                     <tr>
-//                         <td>30 or Over</td>
-//                         <td>Obese</td>
-//                     </tr>
-//                 </table>
-//             </div>
-//             <div>
-//                 <h3>Maximum Muscular Potential</h3>
-//                 <p>According to Martin Barkhan's formula, your maximum muscular potential is ${mmp} ${weightUnit} at 5-6% body fat, ${mmp*1.05} ${weightUnit} at 10% body fat, or ${mmp*1.1} ${weightUnit} a5 15% body fat.</p>
-//             </div>
-//         </div>
-// )
-
 submitButton.addEventListener('click', () => {
     setHeight()
     setWeight()
@@ -274,31 +215,31 @@ submitButton.addEventListener('click', () => {
     mmpCalculation()
     if (height && weight && sex) {
         result.innerHTML = (
-            `<div>
+            `<div class="result-info">
             <p>You are a ${age} year old ${sex} that is ${height} ${heightUnit} tall and weighs ${weight} ${weightUnit}.</p>
             <h2>Your maintenance calories: ${calorieActivityRange[activityLevel]} per day</h2>
             <table>
-                <tr>
+                <tr class="row">
                     <td>Basal Metabolic Rate</td>
                     <td>${calorieActivityRange["bmr"]} calories per day</td>
                 </tr>
-                <tr>
+                <tr class="row">
                     <td>Sedentary</td>
                     <td>${calorieActivityRange["sedentary"]} calories per day</td>
                 </tr>
-                <tr>
+                <tr class="row">
                     <td>Light Exercise</td>
                     <td>${calorieActivityRange["lightExercise"]} calories per day</td>
                 </tr>
-                <tr>
+                <tr class="row"> 
                     <td>Moderate Exercise</td>
                     <td>${calorieActivityRange["moderateExercise"]} calories per day</td>
                 </tr>
-                <tr>
+                <tr class="row">
                     <td>Heavy Exercise</td>
                     <td>${calorieActivityRange["heavyExercise"]} calories per day</td>
                 </tr>
-                <tr>
+                <tr class="row">
                     <td>Athlete</td>
                     <td>${calorieActivityRange["athlete"]} calories per day</td>
                 </tr>
@@ -307,28 +248,26 @@ submitButton.addEventListener('click', () => {
                 <h3>BMI Score: ${bmi}</h3>
                 <p>You are classified as ${bmiClass}</p>
                 <table>
-                    <tr>
+                    <tr class="row">
                         <td>18.5 or Under</td>
                         <td>Underweight</td>
                     </tr>
-                    <tr>
+                    <tr class="row">
                         <td>18.5 - 24.99</td>
                         <td>Normal Weight</td>
                     </tr>
-                    <tr>
+                    <tr class="row">
                         <td>25 - 29.99</td>
                         <td>Overweight</td>
                     </tr>
-                    <tr>
+                    <tr class="row">
                         <td>30 or Over</td>
                         <td>Obese</td>
                     </tr>
                 </table>
             </div>
-            <div>
-                <h3>Maximum Muscular Potential</h3>
-                <p>According to Martin Barkhan's formula, your maximum muscular potential is ${mmp.toFixed()} ${weightUnit} at 5-6% body fat, ${(mmp*1.05).toFixed()} ${weightUnit} at 10% body fat, or ${(mmp*1.1).toFixed()} ${weightUnit} at 15% body fat.</p>
-            </div>
+            <h3>Maximum Muscular Potential</h3>
+            <p>According to Martin Barkhan's formula, your maximum muscular potential is ${mmp.toFixed()} ${weightUnit} at 5-6% body fat, ${(mmp*1.05).toFixed()} ${weightUnit} at 10% body fat, or ${(mmp*1.1).toFixed()} ${weightUnit} at 15% body fat.</p>
         </div>`
         );
     } else {
